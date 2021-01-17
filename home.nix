@@ -14,11 +14,8 @@
     clock24 = true;
   };
 
-  # direnv
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-  };
+  programs.direnv.enable = true;
+  programs.dircolors.enable = true;
 
   # git with initial configration:wq
   programs.git = {
@@ -26,10 +23,19 @@
     enable = true;
     userName = "Denis Evsyukov";
     userEmail = "denis@evsyukov.org";
-    ignores = [ "*~" ];
+    ignores = [ 
+      "*~"
+      ".DS_Store"
+      ".vscode"
+      ".envrc"
+      ".python-version"
+      ".idea"
+      "*.iml"
+    ];
   };
 
-  programs.command-not-found.enable = true;
+  # enable autojump https://github.com/wting/autojump
+  programs.autojump.enable = true;
 
   home.packages = [
     pkgs.vim
