@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+# https://nix-community.github.io/home-manager/options.html
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -10,49 +11,48 @@
   home.homeDirectory = "/Users/d.evsyukov";
 
   home.packages = [
-    pkgs.vim
     pkgs.age
-    # pkgs.autojump
+    pkgs.aria2
     # pkgs.bash
-    pkgs.bashInteractive_5
     pkgs.bash-completion
-    # pkgs.direnv
+    pkgs.bashInteractive_5
+    pkgs.coreutils
+    pkgs.curl
+    pkgs.diffutils        # For `cmp` and `diff`.
     pkgs.emacs
+    pkgs.fd
+    pkgs.findutils
     pkgs.fortune
-    # pkgs.git
+    pkgs.gettext
+    pkgs.gnugrep
     pkgs.gnupg
+    pkgs.gnused
+    pkgs.go
+    pkgs.heroku
     pkgs.hledger
+    pkgs.htop
+    pkgs.hugo
     pkgs.jq
     pkgs.mc
     pkgs.mosh
-    pkgs.ripgrep
-    pkgs.rustup
-    # pkgs.tmux
-    pkgs.tree
-    pkgs.go
-    pkgs.curl
-    pkgs.gettext
-    # pkgs.htop
-    pkgs.terraform
-    pkgs.coreutils
-    pkgs.hugo
-    pkgs.upx
-    pkgs.curl
-    pkgs.htop
-    pkgs.rlwrap
-    pkgs.wget
-    pkgs.heroku
+    pkgs.ncurses
     pkgs.p7zip
-    pkgs.readline
-    # pkgs.openssh
-    pkgs.unzip
-    pkgs.vscode
-    # pkgs.firefox
     pkgs.pandoc
+    pkgs.readline
+    pkgs.ripgrep
+    pkgs.rlwrap
+    pkgs.rustup
+    pkgs.terraform
+    pkgs.tree
+    pkgs.unzip
+    pkgs.upx
+    pkgs.vim
     pkgs.vimer
-    pkgs.lesspipe
-    pkgs.fd
+    pkgs.vscode
+    pkgs.wget
   ];
+
+  manual.manpages.enable = true;
 
   home.sessionPath = [ "$HOME/bin" "$HOME/.local/bin" "$HOME/.cargo/bin/" "$HOME/go/bin"];
   home.sessionVariables = {
@@ -68,6 +68,8 @@
   programs.tmux = {
     enable = true;
     clock24 = true;
+    # aggressiveResize = true;
+    # baseIndex = 1;
   };
 
   programs.direnv = {
@@ -205,9 +207,55 @@
     };
   };
 
+  # https://starship.rs/config/#configuration
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
+    settings = {
+      add_newline = false;
+      scan_timeout = 10;
+      character = {
+        success_symbol = "➜";
+        error_symbol = "➜";
+      };
+      hostname = {
+        ssh_only = true;
+        format =  "on [$hostname](bold red) ";
+        trim_at = ".companyname.com";
+        disabled = false;
+      };
+    };
+  };
+
+  programs.lesspipe.enable = true;
+  programs.man.enable = true;
+
+  programs.readline = {
+    enable = true;
+    bindings = {
+      "\\e[B" = "history-search-forward";
+      "\\e[A" = "history-search-backward";
+      "\\e[3;3~" = "kill-word";
+      "\\e[1;5D" = "backward-word";
+      "\\e[1;5C" = "forward-word";
+    };
+    extraConfig = ''
+      set bell-style none
+      set keymap emacs
+      set completion-ignore-case on
+      set show-all-if-ambiguous on
+      set mark-symlinked-directories on
+      set match-hidden-files off
+      set page-completions off
+      set completion-query-items 200
+      set visible-stats on
+      set skip-completed-text on
+      set input-meta on
+      set output-meta on
+      set convert-meta off
+      set show-all-if-unmodified on
+    '';
+    includeSystemConfig = true;
   };
 
   home.file = {
