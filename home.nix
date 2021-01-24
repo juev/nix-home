@@ -13,13 +13,14 @@
   home.packages = [
     pkgs.age
     pkgs.aria2
-    # pkgs.bash
     pkgs.bash-completion
     pkgs.bashInteractive_5
+    pkgs.bat
     pkgs.coreutils
     pkgs.curl
     pkgs.diffutils        # For `cmp` and `diff`.
     pkgs.emacs
+    pkgs.exa
     pkgs.fd
     pkgs.findutils
     pkgs.fortune
@@ -29,6 +30,7 @@
     pkgs.gnused
     pkgs.go
     pkgs.heroku
+    pkgs.hexyl
     pkgs.hledger
     pkgs.htop
     pkgs.hugo
@@ -40,14 +42,15 @@
     pkgs.pandoc
     pkgs.readline
     pkgs.ripgrep
+    pkgs.ripgrep-all
     pkgs.rlwrap
     pkgs.rustup
     pkgs.terraform
+    pkgs.tldr
     pkgs.tree
     pkgs.unzip
     pkgs.upx
     pkgs.vim
-    pkgs.vimer
     pkgs.vscode
     pkgs.wget
   ];
@@ -175,11 +178,12 @@
       "-- -"="cd -";
       h="history";
       e="emacsclient -n -a \"open /Applications/Emacs.app\"";
-      l="ls -lFp --color=auto";
-      la="ls -lahFp --color=auto";
-      ll="ls -lhFp --color=auto";
-      lsd="ls -lF --color=auto | grep --color=never '^d'";
-      ls="command ls -p --color=auto";
+      cat="bat -p";
+      l="ls -lF --color=auto";
+      la="ls -laF --color=auto";
+      ll="ls -lF --color=auto";
+      lsd="ls -FD --color=auto";
+      ls="command exa -F --color=auto";
       df="df -Ph";
       du="du -Ph";
       sudo="sudo ";
