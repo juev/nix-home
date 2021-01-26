@@ -1,14 +1,23 @@
 { config, pkgs, ... }:
 
 # https://nix-community.github.io/home-manager/options.html
-{
+let
+  os = builtins.currentSystem;
+  isLinux = os == "x86_64-linux";
+  isDarwin = os == "x86_64-darwin";
+  userName = builtins.getEnv "USER";
+  homeDirectory = builtins.getEnv "HOME";
+in rec {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "d.evsyukov";
-  home.homeDirectory = "/Users/d.evsyukov";
+  home.username = userName;
+  home.homeDirectory = homeDirectory;
+  # home.homeDirectory = if isDarwin then
+  #   /. + ("/Users/" + config.home.username)
+  # else /. + ("/home/" + config.home.username);
 
   home.packages = [
     pkgs.age
@@ -35,6 +44,7 @@
     pkgs.htop
     pkgs.hugo
     pkgs.jq
+    pkgs.kubectl
     pkgs.mc
     pkgs.mosh
     pkgs.ncurses
@@ -207,7 +217,8 @@
       grh="git reset --hard";
       gprune="git branch -vv | grep ': gone]'|  grep -v '*' | awk '{ print $1; }' | xargs -r git branch -d";
       empty="find ~/Projects/ -type d -name \"target\" -exec rm -rf {} +";
-      hadd="hledger add -f ~/Projects/Github/hledger/2021.journal";
+      hadd="hledger add -f $HOME/Projects/Github/hledger/2021.journal";
+      infra="ansible-playbook --vault-password-file ~/.vault_pass ";
     };
   };
 
