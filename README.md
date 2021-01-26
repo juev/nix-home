@@ -54,4 +54,5 @@ for ignoring changes on private configuration. And dont forget to change email a
 ### Reference
 
 1. [nix-community/home-manager](https://github.com/nix-community/home-manager)
-2. [ryantm/home-manager-template](https://github.com/ryantm/home-manager-template)
+1. [ihsanturk/dotfiles](https://github.com/ihsanturk/dotfiles)
+
