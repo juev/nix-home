@@ -25,7 +25,6 @@ in rec {
     ALTERNATE_EDITOR="";
     EDITOR="vim";
     LANG="en_US.UTF-8";
-    LC_ALL="en_US.UTF-8";
     GREP_OPTIONS="--color=auto";
     WEBSITE="$HOME/Projects/juev.org";
     LEDGER_FILE="$HOME/Projects/Github/hledger/main.journal";

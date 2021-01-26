@@ -27,11 +27,11 @@
       h="history";
       e="emacsclient -n -a \"open /Applications/Emacs.app\"";
       cat="bat -p";
-      l="ls -lF --color=auto";
-      la="ls -laF --color=auto";
-      ll="ls -lF --color=auto";
-      lsd="ls -FD --color=auto";
-      ls="command exa -F --color=auto";
+      l="ls -F1";
+      la="ls -laF";
+      ll="ls -lF";
+      lsd="ls -FD";
+      ls="command exa -F --group-directories-first --color=auto";
       df="df -Ph";
       du="du -Ph";
       sudo="sudo ";
