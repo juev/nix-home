@@ -41,6 +41,16 @@ $ ln -s `pwd` ~/.config/nixpkgs
 $ home-manager switch
 ```
 
+## Some note
+
+After clone repository use command:
+
+```shell
+git update-index --skip-worktree profile/private.nix
+```
+
+for ignoring changes on private configuration. And dont forget to change email address on this file :smile:
+
 ### Reference
 
 1. [nix-community/home-manager](https://github.com/nix-community/home-manager)
