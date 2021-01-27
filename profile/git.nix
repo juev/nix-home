@@ -21,7 +21,7 @@
       s = "status --short --branch --ignore-submodules=untracked";
       amend = "!git add . && git commit --amend --no-edit";
       p = "!git push origin $(git rev-parse --abbrev-ref HEAD)";
-      c = "!git add -A && git commit -m ";
+      c = "!git add -A && git commit";
       cc = "!git commit --amend -m ";
       co = "checkout";
       f = "!git fetch --all && git rebase origin/master";

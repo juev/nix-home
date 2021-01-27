@@ -1,51 +1,66 @@
 { config, pkgs, ... }:
 {
-  home.packages = [
-    pkgs.age
-    pkgs.aria2
-    pkgs.bash-completion
-    pkgs.bashInteractive_5
-    pkgs.bat
-    pkgs.coreutils
-    pkgs.curl
-    pkgs.diffutils        # For `cmp` and `diff`.
-    pkgs.emacs
-    pkgs.exa
-    pkgs.fd
-    pkgs.findutils
-    pkgs.fortune
-    pkgs.gettext
-    pkgs.gnugrep
-    pkgs.gnupg
-    pkgs.gnused
-    pkgs.go
-    pkgs.heroku
-    pkgs.hexyl
-    pkgs.hledger
-    pkgs.htop
-    pkgs.hugo
-    pkgs.jq
-    pkgs.kubectl
-    pkgs.mc
-    pkgs.mosh
-    pkgs.ncurses
-    pkgs.p7zip
-    pkgs.pandoc
-    pkgs.readline
-    pkgs.ripgrep
-    pkgs.ripgrep-all
-    pkgs.rlwrap
-    pkgs.rustup
-    pkgs.terraform
-    pkgs.tldr
-    pkgs.tree
-    pkgs.unzip
-    pkgs.upx
-    pkgs.vim
-    pkgs.wget
+  home.packages = with pkgs; [
+    age
+    aria2
+    bash-completion
+    bat
+    coreutils
+    curl
+    diffutils        # For `cmp` and `diff`.
+    emacs
+    exa
+    fd
+    findutils
+    fortune
+    gettext
+    gnugrep
+    gnupg
+    gnused
+    go
+    heroku
+    hexyl
+    hledger
+    htop
+    hugo
+    jq
+    kubectl
+    mc
+    mosh
+    ncurses
+    p7zip
+    pandoc
+    readline
+    ripgrep
+    ripgrep-all
+    rlwrap
+    rustup
+    terraform
+    tldr
+    tree
+    unzip
+    upx
+    vim
+    wget
   ];
 
   manual.manpages.enable = true;
+
+  programs.password-store = {
+    enable = true;
+    package = pkgs.pass.withExtensions (
+      ext: with ext; [
+        pass-audit
+        pass-checkup
+        pass-genphrase
+        pass-otp
+        pass-update
+      ]
+      );
+    settings = {
+      PASSWORD_STORE_DIR = "$HOME/.secrets/password-store";
+    };
+  };
 
   programs.tmux = {
     enable = true;

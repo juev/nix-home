@@ -16,6 +16,10 @@
           git "$@"
         fi
       }
+
+      function take() {
+        mkdir -p $@ && cd $\{@:$#}
+      }
     '';
     shellAliases = {
       ".."="cd ..";

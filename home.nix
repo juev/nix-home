@@ -9,6 +9,14 @@ let
   userName = builtins.getEnv "USER";
   homeDirectory = builtins.getEnv "HOME";
 in rec {
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = false;
+      allowUnsupportedSystem = false;
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

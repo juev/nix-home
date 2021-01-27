@@ -2,15 +2,14 @@
 {
 
 	home.packages = with pkgs; [
-
-		qrencode
 		coreutils
 		imagemagick
+		qrencode
 		unixtools.watch
-
+		bashInteractive_5
+		vscode
 	];
 
-	programs.alacritty.enable = true;
 	programs.git.extraConfig.credential.helper = "osxkeychain";
 
 }
