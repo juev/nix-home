@@ -43,6 +43,7 @@ in rec {
     ".dir_colors".source = ./config/dircolors;
     ".inputrc".source = ./config/inputrc;
     ".gemrc".source = ./config/gemrc;
+    ".gitmessage".source = ./config/gitmessage;
   };
 
   nixpkgs.overlays = [

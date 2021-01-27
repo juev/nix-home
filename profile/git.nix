@@ -46,6 +46,7 @@
         precomposeunicode = false;
         quotepath = false;
       };
+      commit = {template = "~/.gitmessage";};
       apply = {whitespace = "fix";};
       color = {ui = "auto";};
       diff = {renames = "copies";};
