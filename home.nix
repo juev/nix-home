@@ -36,6 +36,7 @@ in rec {
     GREP_OPTIONS="--color=auto";
     WEBSITE="$HOME/Projects/juev.org";
     LEDGER_FILE="$HOME/Projects/Github/hledger/main.journal";
+    GPG_TTY="$(tty)";
   };
 
   home.file = {
