@@ -91,7 +91,7 @@
     enable = true;
     enableBashIntegration = true;
     settings = {
-      add_newline = false;
+      add_newline = true;
       scan_timeout = 10;
       character = {
         success_symbol = "➜";
