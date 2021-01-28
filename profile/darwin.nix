@@ -7,7 +7,6 @@
 		qrencode
 		unixtools.watch
 		bashInteractive_5
-		vscode
 	];
 
 	programs.git.extraConfig.credential.helper = "osxkeychain";

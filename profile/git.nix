@@ -19,12 +19,12 @@
       l = "log --pretty=oneline -n 10";
       d = "diff";
       s = "status --short --branch --ignore-submodules=untracked";
-      amend = "!git add . && git commit --amend --no-edit";
+      amend = "commit --amend  -C HEAD";
       p = "!git push origin $(git rev-parse --abbrev-ref HEAD)";
       c = "!git add -A && git commit";
-      cc = "!git commit --amend -m ";
+      ca = "commit --amend";
       co = "checkout";
-      f = "!git fetch --all && git rebase origin/master";
+      cp = "cherry-pick";
       undo = "reset HEAD~";
       prune = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d";
       delete = "branch -D";
@@ -39,26 +39,40 @@
     };
     extraConfig = {
       core = { 
-        whitespace = "space-before-tab,-indent-with-non-tab,trailing-space"; 
+        whitespace = "trailing-space,space-before-tab";
         trustctime = false;
         editor = "vim";
         autocrlf = "input";
         precomposeunicode = false;
         quotepath = false;
       };
-      commit = {template = "~/.gitmessage";};
-      apply = {whitespace = "fix";};
-      color = {ui = "auto";};
-      diff = {renames = "copies";};
-      help = {autocorrect = 1;};
       merge = {
-        	log = true;
-          tool = "vimdiff";
-          conflictstyle = "diff3";
-        };
-      push = {default = "simple";};
-      github = {user = "juev";};
-      pull = {rebase = "merges";};
+        log = true;
+        tool = "vimdiff";
+        conflictstyle = "diff3";
+      };
+			diff = {
+				ignoreSubmodules = "dirty";
+				renames = "copies";
+				mnemonicprefix = true;
+			};
+			color = {
+				status      = "auto";
+				diff        = "auto";
+				branch      = "auto";
+				interactive = "auto";
+				ui          = "auto";
+				sh          = "auto";
+			};
+      apply.whitespace = "fix";
+      branch.autosetupmerge = true;
+      commit.template = "~/.gitmessage";
+      github.user = "juev";
+      help.autocorrect = 1;
+      mergetool.keepBackup  = true;
+      pull.rebase           = true;
+      push.default = "tracking";
+      rebase.autosquash     = true;
     };
   };
 }
