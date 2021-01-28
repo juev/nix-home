@@ -45,6 +45,10 @@ in rec {
     ".inputrc".source = ./config/inputrc;
     ".gemrc".source = ./config/gemrc;
     ".gitmessage".source = ./config/gitmessage;
+    "bin" = {
+      source = ./files/bin;
+      recursive = true;
+    };
   };
 
   nixpkgs.overlays = [
