@@ -61,9 +61,10 @@ in rec {
     ./profile/bash.nix
     ./profile/git.nix
     ./profile/private.nix
+    # ./private/default.nix
   ]
-  ++ (optionals isLinux [ ./profile/linux.nix ])
-  ++ (optionals isDarwin [ ./profile/darwin.nix ]);
+  ++ (optionals isLinux [ ./profile/linux.nix ./private/linux.nix ])
+  ++ (optionals isDarwin [ ./profile/darwin.nix ./private/darwin.nix ]);
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
