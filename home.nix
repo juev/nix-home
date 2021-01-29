@@ -64,8 +64,6 @@ in rec {
     ./profile/base.nix
     ./profile/bash.nix
     ./profile/git.nix
-    ./profile/private.nix
-    # ./private/default.nix
   ]
   ++ (optionals isLinux [ ./profile/linux.nix ./private/linux.nix ])
   ++ (optionals isDarwin [ ./profile/darwin.nix ./private/darwin.nix ]);
