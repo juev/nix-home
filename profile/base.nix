@@ -65,6 +65,7 @@
   programs.tmux = {
     enable = true;
     clock24 = true;
+    secureSocket = false;
     # aggressiveResize = true;
     # baseIndex = 1;
   };
