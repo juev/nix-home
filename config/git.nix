@@ -20,15 +20,15 @@
       d = "diff";
       s = "status --short --branch --ignore-submodules=untracked";
       amend = "commit --amend  -C HEAD";
-      p = "!git push origin $(git rev-parse --abbrev-ref HEAD)";
-      c = "!git add -A && git commit";
+      p = "push origin $(git rev-parse --abbrev-ref HEAD)";
+      push = "push origin $(git rev-parse --abbrev-ref HEAD)";
+      c = "commit -v";
       ca = "commit --amend";
       co = "checkout";
       cp = "cherry-pick";
       undo = "reset HEAD~";
       prune = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d";
       delete = "branch -D";
-      sync = "!git pull -q -r origin master";
       m = "!git checkout master && git pull";
       last = "log -1 HEAD";
       pr = "pull --rebase";

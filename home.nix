@@ -40,11 +40,11 @@ in rec {
   };
 
   home.file = {
-    ".tmux.conf".source = ./config/tmux.conf;
-    ".dir_colors".source = ./config/dircolors;
-    ".inputrc".source = ./config/inputrc;
-    ".gemrc".source = ./config/gemrc;
-    ".gitmessage".source = ./config/gitmessage;
+    ".tmux.conf".source = ./files/tmux.conf;
+    ".dir_colors".source = ./files/dircolors;
+    ".inputrc".source = ./files/inputrc;
+    ".gemrc".source = ./files/gemrc;
+    ".gitmessage".source = ./files/gitmessage;
     "bin" = {
       source = ./files/bin;
       recursive = true;
@@ -61,13 +61,13 @@ in rec {
   ];
 
   imports = [
-    ./profile/base.nix
-    ./profile/bash.nix
-    ./profile/git.nix
+    ./config/base.nix
+    ./config/bash.nix
+    ./config/git.nix
     ./private/default.nix
   ]
-  ++ (optionals isLinux [ ./profile/linux.nix ])
-  ++ (optionals isDarwin [ ./profile/darwin.nix ]);
+  ++ (optionals isLinux [ ./config/linux.nix ])
+  ++ (optionals isDarwin [ ./config/darwin.nix ]);
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
