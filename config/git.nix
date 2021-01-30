@@ -20,9 +20,10 @@
       d = "diff";
       s = "status --short --branch --ignore-submodules=untracked";
       amend = "commit --amend  -C HEAD";
-      p = "push origin $(git rev-parse --abbrev-ref HEAD)";
-      push = "push origin $(git rev-parse --abbrev-ref HEAD)";
+      p = "!git push origin $(git rev-parse --abbrev-ref HEAD)";
+      push = "!git push origin $(git rev-parse --abbrev-ref HEAD)";
       c = "commit -v";
+      ac = "commit -va";
       ca = "commit --amend";
       co = "checkout";
       cp = "cherry-pick";
