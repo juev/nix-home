@@ -1,55 +1,20 @@
 # Installation
 
-`Note: I'm use Darwin.`
-
-## Install Nix
+Just use Makefile:
 
 ```shell
-$ sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+make all
 ```
 
-## Install home-manager
-
-```shell
-$ nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-$ nix-channel --update
-```
-
-Add this to your shell:
-
-```shell
-export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
-```
-
-Install home-manager:
-
-```shell
-$ nix-shell '<home-manager>' -A install
-```
-
-Then add this to your shell:
-
-```shell
-. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-```
+Which installed nix, home-manager and activate this configuration.
 
 ## Use configuration
 
+Just make changed in configuration files then activate it:
+
 ```shell
-$ ln -s `pwd` ~/.config/nixpkgs
-# skip it $ nix-env -f '<nixpkgs>' -iA home-manager
 $ home-manager switch
 ```
-
-## Some note
-
-After clone repository use command:
-
-```shell
-git update-index --skip-worktree profile/private.nix
-```
-
-for ignoring changes on private configuration. And dont forget to change email address on this file :smile:
 
 ### Reference
 
