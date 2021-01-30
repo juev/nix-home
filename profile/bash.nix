@@ -25,15 +25,15 @@
     '';
     shellAliases = {
       h="history";
-      e="emacsclient -n -a \"open /Applications/Emacs.app\"";
-      cat="bat -p";
       l="ls -F1";
       la="ls -laF";
-      ll="ls -lF";
+      ll="ls -lF --git";
       lsd="ls -FD";
       ls="command exa -F --group-directories-first --color=auto";
       df="df -Ph";
+      ga="git-annex";
       du="du -Ph";
+      wipe="srm -vfr";
       sudo="sudo ";
       week="date +%V";
       md5sum="md5";

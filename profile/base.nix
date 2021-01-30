@@ -14,6 +14,7 @@
     findutils
     fortune
     gettext
+    git-annex
     gnugrep
     gnupg
     gnused
@@ -32,9 +33,10 @@
     pandoc
     readline
     ripgrep
-    ripgrep-all
     rlwrap
+    rsync
     rustup
+    srm
     terraform
     tldr
     tree
