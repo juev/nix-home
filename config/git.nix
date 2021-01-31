@@ -47,6 +47,11 @@
         precomposeunicode = false;
         quotepath = false;
       };
+      url = {
+        "git@github.com:" = {
+          insteadOf = "https://github.com/";
+        };
+      };
       merge = {
         log = true;
         tool = "vimdiff";
