@@ -4,6 +4,7 @@
     age
     aria2
     bash-completion
+    bashInteractive_5
     bat
     coreutils
     curl
