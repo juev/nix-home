@@ -38,6 +38,7 @@
     srm
     terraform
     tldr
+    tmux
     tree
     unzip
     upx
@@ -63,13 +64,6 @@
     };
   };
 
-  programs.tmux = {
-    enable = true;
-    clock24 = true;
-    secureSocket = false;
-    # aggressiveResize = true;
-    # baseIndex = 1;
-  };
 
   programs.direnv = {
     enable = true;
