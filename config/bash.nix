@@ -9,7 +9,7 @@
         . $HOME/.nix-profile/etc/profile.d/nix.sh;
       fi
 
-      source ${pkgs.bash-completion}/etc/profile.d/bash_completion.sh
+      source ${pkgs.bash-completion}/share/bash-completion/bash_completion
 
       function g() {
         if [ -z "$1" ]; then
