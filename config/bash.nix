@@ -47,6 +47,7 @@
       empty="find ~/Projects/ -type d -name \"target\" -exec rm -rf {} +";
       hadd="hledger add -f $HOME/Projects/Github/hledger/2021.journal";
       infra="ansible-playbook --vault-password-file ~/.vault_pass ";
+      git-purge="git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D";
     };
   };
 }
