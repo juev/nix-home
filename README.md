@@ -1,9 +1,13 @@
 # Installation
 
-Just use Makefile:
+Use `sh-file` for your system:
 
 ```shell
-make all
+darwin.sh
+```
+
+```shell
+linux.sh
 ```
 
 Which installed nix, home-manager and activate this configuration.
