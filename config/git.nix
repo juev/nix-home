@@ -70,6 +70,7 @@
 				ui          = "auto";
 				sh          = "auto";
 			};
+      init.defaultBranch = "main";
       apply.whitespace = "fix";
       branch.autosetupmerge = true;
       commit.template = "~/.gitmessage";
