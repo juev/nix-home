@@ -6,10 +6,11 @@
     bash-completion
     bashInteractive_5
     bat
-    coreutils
+    coreutils-full
     curl
     diffutils        # For `cmp` and `diff`.
     emacs
+    enca
     exa
     fd
     findutils
