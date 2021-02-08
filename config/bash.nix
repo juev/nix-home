@@ -22,6 +22,7 @@
       function take() {
         mkdir -p -- "$1" && cd -P -- "$1"
       }
+      [[ -f $HOME/.env ]] && source $HOME/.env
     '';
     shellAliases = {
       h="history";
