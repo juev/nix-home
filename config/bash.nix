@@ -66,6 +66,7 @@
       revert="git revert";
       show="git show";
       stash="git stash";
+      switch="nix-channel --update nixpkgs && home-manager switch";
     };
   };
 }
