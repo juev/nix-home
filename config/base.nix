@@ -91,10 +91,6 @@
     settings = {
       add_newline = true;
       scan_timeout = 10;
-      character = {
-        success_symbol = "➜";
-        error_symbol = "➜";
-      };
       hostname = {
         ssh_only = true;
         format =  "on [$hostname](bold red) ";
