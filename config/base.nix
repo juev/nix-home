@@ -30,6 +30,7 @@
     mc
     mosh
     ncurses
+    nix-bash-completions
     p7zip
     pandoc
     readline
