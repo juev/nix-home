@@ -10,6 +10,7 @@
       fi
 
       source ${pkgs.bash-completion}/share/bash-completion/bash_completion
+      source ~/.nix-profile/share/git/contrib/completion/git-completion.bash
 
       function g() {
         if [ -z "$1" ]; then
