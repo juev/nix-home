@@ -62,7 +62,7 @@ in rec {
 
   imports = [
     ./config/base.nix
-    ./config/bash.nix
+    ./config/shell.nix
     ./config/git.nix
     ./private/default.nix
   ]

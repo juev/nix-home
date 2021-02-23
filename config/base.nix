@@ -71,24 +71,20 @@
   programs.direnv = {
     enable = true;
     enableNixDirenvIntegration = true;
-    enableBashIntegration = true;
   };
 
   programs.dircolors = {
     enable = true;
-    enableBashIntegration = true;
   };
 
   # enable autojump https://github.com/wting/autojump
   programs.autojump = {
     enable = true;
-    enableBashIntegration = true;
   };
 
   # https://starship.rs/config/#configuration
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
     settings = {
       add_newline = true;
       scan_timeout = 10;
