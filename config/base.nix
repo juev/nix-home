@@ -16,6 +16,7 @@
     findutils
     fortune
     gettext
+    git-extras
     gnugrep
     gnupg
     gnused
