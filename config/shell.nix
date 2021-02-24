@@ -83,6 +83,9 @@ in {
       [[ -e $HOME/.env ]] && source $HOME/.env
       # case-insensitive,partial-word and then substring completion
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+      setopt share_history
+      bindkey "^[[A" history-beginning-search-backward
+      bindkey "^[[B" history-beginning-search-forward
     '';
   };
 }
