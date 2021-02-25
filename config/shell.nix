@@ -59,13 +59,13 @@ in {
   programs.zsh = {
     inherit shellAliases;
     enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
+    # enableAutosuggestions = true;
+    # enableCompletion = true;
     defaultKeymap = "emacs";
     dotDir = ".config/zsh";
     history = {
-      extended = true;
-      path = ".config/zsh/history";
+      expireDuplicatesFirst = true;
+      path = ".config/zsh/zsh_history";
     };
 
     # Called whenever zsh is initialized
@@ -83,7 +83,6 @@ in {
       [[ -e $HOME/.env ]] && source $HOME/.env
       # case-insensitive,partial-word and then substring completion
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-      setopt append_history
     '';
   };
 }
