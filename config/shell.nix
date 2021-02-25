@@ -84,7 +84,6 @@ in {
       # case-insensitive,partial-word and then substring completion
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
       setopt append_history
-      setopt inc_append_history
     '';
   };
 }
