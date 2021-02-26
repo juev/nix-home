@@ -41,6 +41,8 @@ in {
       source ${pkgs.bash-completion}/share/bash-completion/bash_completion
       source ~/.nix-profile/share/git/contrib/completion/git-completion.bash
 
+      shopt -s histappend
+
       function g() {
         if [ -z "$1" ]; then
           git status
