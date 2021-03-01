@@ -39,6 +39,7 @@
     rsync
     rustup
     srm
+    telnet
     terraform
     tldr
     tmux
