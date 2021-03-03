@@ -27,6 +27,7 @@
     hugo
     jq
     kubectl
+    lf
     mc
     mosh
     ncurses
@@ -127,5 +128,16 @@
       set show-all-if-unmodified on
     '';
     includeSystemConfig = true;
+  };
+  programs.neovim ={
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    extraConfig = ''
+    set runtimepath+=~/.vim,~/.vim/after
+    set packpath+=~/.vim
+    source ~/.vimrc
+    '';
   };
 }
