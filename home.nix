@@ -45,6 +45,7 @@ in rec {
     ".inputrc".source = ./files/inputrc;
     ".gemrc".source = ./files/gemrc;
     ".gitmessage".source = ./files/gitmessage;
+    ".hstr.conf".source = ./files/hstr.conf;
     "bin" = {
       source = ./files/bin;
       recursive = true;

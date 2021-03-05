@@ -55,6 +55,7 @@ in {
         mkdir -p -- "$1" && cd -P -- "$1"
       }
       [[ -f $HOME/.env ]] && source $HOME/.env
+      [[ -f $HOME/.hstr.conf ]] && source $HOME/.hstr.conf
     '';
   };
     # zsh settings

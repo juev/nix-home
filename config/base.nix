@@ -23,6 +23,7 @@
     heroku
     hexyl
     hledger
+    hstr
     htop
     hugo
     jq
