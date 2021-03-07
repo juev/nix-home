@@ -6,6 +6,7 @@
     bash-completion
     bashInteractive_5
     bat
+    bcftools
     coreutils-full
     curl
     diffutils        # For `cmp` and `diff`.
@@ -40,6 +41,7 @@
     rlwrap
     rsync
     rustup
+    samtools
     srm
     telnet
     terraform
