@@ -3,7 +3,6 @@
 {
   # git with initial configration:wq
   programs.git = {
-    package = pkgs.gitAndTools.gitFull;
     enable = true;
     userName = "Denis Evsyukov";
     ignores = [ 
