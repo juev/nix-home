@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     age
-    # aria2
     bash-completion
     bashInteractive_5
     bat
@@ -10,26 +9,21 @@
     coreutils-full
     curl
     diffutils        # For `cmp` and `diff`.
-    # emacs
-    # enca
-    # exa
     fd
     findutils
     fortune
+    fzf
     gettext
     gnugrep
     gnupg
     gnused
     go
     heroku
-    # hexyl
     hledger
-    # hstr
     htop
     hugo
     jq
     kubectl
-    # lf
     mc
     mosh
     ncurses
@@ -45,7 +39,6 @@
     srm
     telnet
     terraform
-    # tldr
     tmux
     tree
     unzip

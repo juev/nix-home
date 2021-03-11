@@ -40,6 +40,8 @@ in {
 
       source ${pkgs.bash-completion}/share/bash-completion/bash_completion
       source ~/.nix-profile/share/git/contrib/completion/git-completion.bash
+      source ${pkgs.fzf}/share/fzf/completion.bash
+      source ${pkgs.fzf}/share/fzf/key-bindings.bash
 
       shopt -s histappend
 
@@ -55,7 +57,6 @@ in {
         mkdir -p -- "$1" && cd -P -- "$1"
       }
       [[ -f $HOME/.env ]] && source $HOME/.env
-      [[ -f $HOME/.hstr.conf ]] && source $HOME/.hstr.conf
     '';
   };
     # zsh settings
