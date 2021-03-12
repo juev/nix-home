@@ -11,17 +11,13 @@
     diffutils        # For `cmp` and `diff`.
     fd
     findutils
-    fortune
     fzf
     gettext
     gnugrep
     gnupg
     gnused
     go
-    heroku
-    hledger
     htop
-    hugo
     jq
     kubectl
     mc
@@ -33,7 +29,6 @@
     readline
     ripgrep
     rlwrap
-    rsync
     rustup
     samtools
     srm
@@ -44,7 +39,6 @@
     unzip
     upx
     vim
-    wget
   ];
 
   manual.manpages.enable = true;
