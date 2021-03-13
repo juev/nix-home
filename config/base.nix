@@ -32,6 +32,7 @@
     rustup
     samtools
     srm
+    stack
     telnet
     terraform
     tmux
