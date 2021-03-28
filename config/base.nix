@@ -5,7 +5,6 @@
     bash-completion
     bashInteractive_5
     bat
-    bcftools
     coreutils-full
     curl
     diffutils        # For `cmp` and `diff`.
@@ -19,8 +18,6 @@
     go
     htop
     jq
-    kubectl
-    mc
     mosh
     ncurses
     nix-bash-completions
@@ -30,8 +27,6 @@
     ripgrep
     rlwrap
     rustup
-    samtools
-    srm
     stack
     telnet
     terraform
