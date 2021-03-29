@@ -5,6 +5,7 @@
     bash-completion
     bashInteractive_5
     bat
+    cachix
     coreutils-full
     curl
     diffutils        # For `cmp` and `diff`.
@@ -18,6 +19,7 @@
     go
     htop
     jq
+    kubectl
     mosh
     ncurses
     nix-bash-completions

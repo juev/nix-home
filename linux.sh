@@ -16,3 +16,5 @@ nix-shell '<home-manager>' -A install
 # Activate profile
 home-manager switch
 
+# Use cachix
+cachix use nix-community
