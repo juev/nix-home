@@ -19,7 +19,6 @@
     go
     htop
     jq
-    kubectl
     mosh
     ncurses
     nix-bash-completions
