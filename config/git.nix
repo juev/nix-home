@@ -46,29 +46,24 @@
         precomposeunicode = false;
         quotepath = false;
       };
-      url = {
-        "git@github.com:" = {
-          insteadOf = "https://github.com/";
-        };
-      };
       merge = {
         log = true;
         tool = "vimdiff";
         conflictstyle = "diff3";
       };
-			diff = {
-				ignoreSubmodules = "dirty";
-				renames = "copies";
-				mnemonicprefix = true;
-			};
-			color = {
-				status      = "auto";
-				diff        = "auto";
-				branch      = "auto";
-				interactive = "auto";
-				ui          = "auto";
-				sh          = "auto";
-			};
+      diff = {
+        ignoreSubmodules = "dirty";
+        renames = "copies";
+        mnemonicprefix = true;
+      };
+      color = {
+        status      = "auto";
+        diff        = "auto";
+        branch      = "auto";
+        interactive = "auto";
+        ui          = "auto";
+        sh          = "auto";
+      };
       init.defaultBranch = "main";
       apply.whitespace = "fix";
       branch.autosetupmerge = true;
