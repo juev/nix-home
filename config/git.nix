@@ -72,7 +72,7 @@
       help.autocorrect = 1;
       mergetool.keepBackup  = true;
       pull.rebase           = true;
-      push.default = "tracking";
+      push.default = "current";
       rebase.autosquash     = true;
     };
   };
