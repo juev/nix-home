@@ -18,7 +18,9 @@
     gnupg
     gnused
     go
+    hledger
     htop
+    hugo
     jq
     mosh
     ncurses
@@ -29,6 +31,7 @@
     ripgrep
     rlwrap
     rustup
+    sd
     stack
     telnet
     terraform
@@ -37,6 +40,8 @@
     unzip
     upx
     vim
+    xh
+    xz
   ];
 
   manual.manpages.enable = true;
