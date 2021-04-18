@@ -9,6 +9,7 @@
     coreutils-full
     curl
     diffutils        # For `cmp` and `diff`.
+    exa
     fd
     findutils
     fzf
